@@ -80,11 +80,11 @@ class TicketPanel(discord.ui.View):
 
     @discord.ui.button(label="🧑‍✈️ Recruiter Ticket", style=discord.ButtonStyle.success, custom_id="ticket_recruiter")
     async def recruiter(self, interaction: discord.Interaction, _):
-        await create_ticket(interaction, "recruiter", [RECRUITER_ROLE_ID, CFI_ROLE_ID])
+        await create_ticket(interaction, "recruiter", [RECRUITER_ROLE_ID])
 
     @discord.ui.button(label="🎮 Career Mode Ticket", style=discord.ButtonStyle.secondary, custom_id="ticket_career")
     async def career(self, interaction: discord.Interaction, _):
-        await create_ticket(interaction, "career-mode", [CEO_ROLE_ID, CAO_ROLE_ID])
+        await create_ticket(interaction, "career-mode", [MOD_ROLE_ID])
 
 async def create_ticket(interaction, name, role_ids):
     guild = interaction.guild
