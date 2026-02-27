@@ -15,7 +15,7 @@ CEO_ROLE_ID = 1393269068689309746
 CAO_ROLE_ID = 1393269824544575498
 CMO_ROLE_ID = 1421109822526591077
 RECRUITER_ROLE_ID = 1393270492429025370
-CFI_ROLE_ID = 1393270325822750760
+MOD_ROLE_ID = 1468120470304981194
 
 # ================= INTENTS =================
 intents = discord.Intents.default()
@@ -76,11 +76,11 @@ class TicketPanel(discord.ui.View):
 
     @discord.ui.button(label="🛠 Staff Help Ticket", style=discord.ButtonStyle.primary, custom_id="ticket_staff")
     async def staff(self, interaction: discord.Interaction, _):
-        await create_ticket(interaction, "staff-help", [CEO_ROLE_ID, CAO_ROLE_ID, CMO_ROLE_ID])
+        await create_ticket(interaction, "staff-help", [MOD_ROLE_ID])
 
     @discord.ui.button(label="🧑‍✈️ Recruiter Ticket", style=discord.ButtonStyle.success, custom_id="ticket_recruiter")
     async def recruiter(self, interaction: discord.Interaction, _):
-        await create_ticket(interaction, "recruiter", [CEO_ROLE_ID, CAO_ROLE_ID, RECRUITER_ROLE_ID, CFI_ROLE_ID])
+        await create_ticket(interaction, "recruiter", [RECRUITER_ROLE_ID, CFI_ROLE_ID])
 
     @discord.ui.button(label="🎮 Career Mode Ticket", style=discord.ButtonStyle.secondary, custom_id="ticket_career")
     async def career(self, interaction: discord.Interaction, _):
